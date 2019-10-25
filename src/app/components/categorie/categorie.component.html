@@ -5,7 +5,8 @@
             <div class="col-lg-12">
                 <div class="instagram_photo_iner">
                         <div  *ngFor="let article of articles" class="single_instgram_photo">
-                                <img src="{{article.image_url}}" alt="">
+                                <img src="https://uadb-gainde.herokuapp.com{{article.image_url}}" alt="">
+                               
                                 <a href="#"><i class="ti-instagram"></i></a> 
                                 <h6>{{article.categorie}}</h6>
                                 <h6>{{article.prix}}</h6>
