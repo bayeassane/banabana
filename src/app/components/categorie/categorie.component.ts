@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/articles/article.service';
-import { Article } from 'src/app/models/article';
+import { Article } from 'src/app/models/article/article';
 import { tap, map, filter } from 'rxjs/operators';
 
 
