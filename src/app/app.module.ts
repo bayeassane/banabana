@@ -9,10 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { CategorieComponent } from './components/categorie/categorie.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ArticleService } from './services/article.service';
+import { ArticleService } from './services/articles/article.service';
 import { Routes, RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { LoumaComponent } from './components/louma/louma.component';
 
 const routes: Routes = [
   { path: '', component: CategorieComponent },
@@ -28,7 +30,9 @@ const routes: Routes = [
     HeaderComponent,
     BannerComponent,
     CategorieComponent,
-    FooterComponent
+    FooterComponent,
+    ArticlesComponent,
+    LoumaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Article } from '../models/article';
+import { Article } from '../../models/article';
 import { Observable, throwError } from 'rxjs';
-import { map,retry, catchError } from 'rxjs/operators';
+import { map, retry, catchError } from 'rxjs/operators';
 
 
 
@@ -12,7 +12,6 @@ import { map,retry, catchError } from 'rxjs/operators';
 export class ArticleService {
   private baseUrl = 'https://uadb-gainde.herokuapp.com/testApp/';
   private header = new HttpHeaders({'Content-Type' : 'application/json'});
-  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -28,7 +27,7 @@ export class ArticleService {
 
   errorHandl(error) {
     let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
+    if (error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
     } else {
