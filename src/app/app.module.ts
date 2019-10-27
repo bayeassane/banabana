@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -39,9 +41,18 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function  tokenGetter() {
+             return     localStorage.getItem('access_token'); },
+        whitelistedDomains: ['https://uadb-gainde.herokuapp.com/testApp'],
+        blacklistedRoutes: ['https://uadb-gainde.herokuapp.com/testApp/login']
+      }
+    })
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
