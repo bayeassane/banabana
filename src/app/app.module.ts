@@ -41,16 +41,7 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function  tokenGetter() {
-             return     localStorage.getItem('access_token'); },
-        whitelistedDomains: ['https://uadb-gainde.herokuapp.com/testApp'],
-        blacklistedRoutes: ['https://uadb-gainde.herokuapp.com/testApp/login']
-      }
-    })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ArticleService, LoginService],
   bootstrap: [AppComponent]
