@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -41,7 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
