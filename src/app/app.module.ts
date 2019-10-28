@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'about', component: CategorieComponent },
   { path: 'privacy', component: CategorieComponent },
   { path: 'terms', component: CategorieComponent },
+  { path: 'loumas', component: LoumaComponent },
   { path: '*', redirectTo: '/home', pathMatch: 'full' }
 ];
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/articles/article.service';
 import { Article } from 'src/app/models/article/article';
 import { tap, map, filter } from 'rxjs/operators';
+import { CategorieService } from 'src/app/services/categories/categorie.service';
+import { Categorie } from 'src/app/models/categorie/categorie';
 
 
 @Component({
@@ -10,19 +12,19 @@ import { tap, map, filter } from 'rxjs/operators';
   styleUrls: ['./categorie.component.sass']
 })
 export class CategorieComponent implements OnInit {
-  articles: Article [];
+  categories: Categorie [];
 
-  constructor(public articleService: ArticleService) { }
+  constructor(public categorieService: CategorieService) { }
 
   ngOnInit() {
     this.getItems();
-    console.log(this.articles)
+    console.log(this.categories);
   }
 
   getItems() {
-    this.articleService.getArticles().subscribe((data)=>{
-      this.articles = data;
-      console.log(data)
+    this.categorieService.getCategorie().subscribe((data) => {
+      this.categories = data;
+      console.log(data);
     });
   }
 
