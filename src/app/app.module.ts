@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
+import { PlusRecentService } from 'src/app/services/plus-recent/plus-recent.service';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import {HttpClientModule} from '@angular/common/http';
@@ -17,11 +18,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { LoumaComponent } from './components/louma/louma.component';
+import { PlusRecentComponent } from './components/plus-recent/plus-recent.component';
+
 
 const routes: Routes = [
-  { path: '', component: CategorieComponent },
+  { path: '', component: PlusRecentComponent },
   { path: 'about', component: CategorieComponent },
-  { path: 'privacy', component: CategorieComponent },
+  { path: 'categories', component: CategorieComponent },
   { path: 'terms', component: CategorieComponent },
   { path: 'loumas', component: LoumaComponent },
   { path: '*', redirectTo: '/home', pathMatch: 'full' }
@@ -35,7 +38,8 @@ const routes: Routes = [
     CategorieComponent,
     FooterComponent,
     ArticlesComponent,
-    LoumaComponent
+    LoumaComponent,
+    PlusRecentComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ArticleService, LoginService],
+  providers: [ArticleService, LoginService, PlusRecentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
