@@ -32,14 +32,15 @@ export class LoginComponent implements OnInit {
     if (this.boxForm.invalid) {
       return;
     }
-    this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword);
-    if (localStorage.getItem('access_token')) {
-      this.router.navigateByUrl('/loumas');
-    } else {
-        this.erorCon = true;
-        console.log(this.erorCon);
+    this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword).subscribe((data => {
+      if (data.token) {
+        localStorage.setItem('access_token', data.token);
+        this.router.navigateByUrl('/loumas');
+      } else {
+        this.erorCon = false;
         this.router.navigate(['/login']);
-    }
+      }
+    }));
 
   }
   get formControls() { return this.boxForm.controls; }

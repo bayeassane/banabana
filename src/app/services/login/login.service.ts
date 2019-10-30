@@ -15,11 +15,7 @@ export class LoginService {
 
   // Connection
   login(username: string, password: string) {
-    return this.httpClient.post<UserLogin>('https://uadb-gainde.herokuapp.com/testApp/login', {username, password}).subscribe((data)=>{
-      console.log(data.token);
-      localStorage.setItem('access_token', data.token);
-
-    });
+    return this.httpClient.post<UserLogin>('https://uadb-gainde.herokuapp.com/testApp/login', {username, password});
     }
 
 // Deconnection
