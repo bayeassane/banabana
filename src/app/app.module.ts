@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
 import { PlusRecentService } from 'src/app/services/plus-recent/plus-recent.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -19,16 +20,22 @@ import { environment } from '../environments/environment';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { LoumaComponent } from './components/louma/louma.component';
 import { PlusRecentComponent } from './components/plus-recent/plus-recent.component';
+import { LoginComponent } from './components/login/login/login.component';
 
 
 const routes: Routes = [
   { path: '', component: PlusRecentComponent },
-  { path: 'about', component: CategorieComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'categories', component: CategorieComponent },
   { path: 'terms', component: CategorieComponent },
   { path: 'loumas', component: LoumaComponent },
+  { path: 'logout', component: PlusRecentComponent },
   { path: '*', redirectTo: '/home', pathMatch: 'full' }
 ];
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -39,12 +46,23 @@ const routes: Routes = [
     FooterComponent,
     ArticlesComponent,
     LoumaComponent,
-    PlusRecentComponent
+    PlusRecentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        // tslint:disable-next-line: object-literal-shorthand
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['https://uadb-gainde.herokuapp.com/testApp/'],
+        blacklistedRoutes: ['https://uadb-gainde.herokuapp.com/testApp/login']
+      }
+    }),
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

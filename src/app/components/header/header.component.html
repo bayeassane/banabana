@@ -30,7 +30,8 @@
                     </div>
                     <div class="hearer_icon d-flex">
                         <div>
-                            <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Login</a>
+                            <a *ngIf="!getToken()" href="/login" class="btn btn-default btn-rounded">Login</a>
+                            <button *ngIf="getToken()" class="btn btn-default btn-rounded" (click)="logout()">Logout</button>
                                 <a id="search_1" href="javascript:void(0)"><i class="ti-search"  (click)="toggle()"></i></a>
                         </div>
                         
@@ -51,51 +52,4 @@
     </div>
 </header>
 <!-- Header part end-->
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <!--Content-->
-    <div class="modal-content form-elegant">
-      <!--Header-->
-      <div class="modal-header text-center">
-        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Connection</strong></h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body mx-4">
-        <!--Body-->
-        <div class="md-form mb-5">
-          <input type="email" id="Form-email1" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
-        </div>
-
-        <div class="md-form pb-3">
-          <input type="password" id="Form-pass1" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
-          <p class="font-small blue-text d-flex justify-content-end">Mot de passe <a href="#" class="blue-text ml-1">
-              oublié?</a></p>
-        </div>
-
-        <div class="text-center mb-3">
-          <button type="button" class="btn btn btn-primary btn-lg btn-block btn-rounded z-depth-1a">Sign in</button>
-        </div>
-        
-
-        
-      </div>
-      <!--Footer-->
-      <div class="modal-footer mx-5 pt-3 mb-1">
-        
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!-- Modal -->
 
