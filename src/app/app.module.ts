@@ -21,11 +21,13 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { LoumaComponent } from './components/louma/louma.component';
 import { PlusRecentComponent } from './components/plus-recent/plus-recent.component';
 import { LoginComponent } from './components/login/login/login.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 const routes: Routes = [
   { path: '', component: PlusRecentComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'products/:id', component: ProductDetailComponent },
   { path: 'categories', component: CategorieComponent },
   { path: 'terms', component: CategorieComponent },
   { path: 'loumas', component: LoumaComponent },
@@ -47,7 +49,8 @@ export function tokenGetter() {
     ArticlesComponent,
     LoumaComponent,
     PlusRecentComponent,
-    LoginComponent
+    LoginComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

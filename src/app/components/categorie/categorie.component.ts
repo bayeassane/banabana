@@ -4,6 +4,7 @@ import { Article } from 'src/app/models/article/article';
 import { tap, map, filter } from 'rxjs/operators';
 import { CategorieService } from 'src/app/services/categories/categorie.service';
 import { Categorie } from 'src/app/models/categorie/categorie';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Categorie } from 'src/app/models/categorie/categorie';
   styleUrls: ['./categorie.component.sass']
 })
 export class CategorieComponent implements OnInit {
-  categories: Categorie [];
+  categories: Observable<Categorie[]>;
 
   constructor(public categorieService: CategorieService) { }
 
@@ -22,10 +23,11 @@ export class CategorieComponent implements OnInit {
   }
 
   getItems() {
-    this.categorieService.getCategorie().subscribe((data) => {
-      this.categories = data;
-      console.log(data);
-    });
+    this.categorieService.getCategorie().pipe(
+      map((data) => {
+        this.categories = data;
+      })
+    );
   }
 
 }

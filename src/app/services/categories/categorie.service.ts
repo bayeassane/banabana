@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Categorie } from 'src/app/models/categorie/categorie';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class CategorieService {
   constructor(private _http: HttpClient) { }
 
   getCategorie() {
-    return this._http.get<Categorie[]>(this.baseUrl + 'categorie', this.httpOptions);
+    return this._http.get<Observable<Categorie[]>>(this.baseUrl + 'categorie', this.httpOptions);
   }
 
 

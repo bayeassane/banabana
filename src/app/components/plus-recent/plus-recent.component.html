@@ -49,7 +49,7 @@
                                 <img src="{{cat.image}}" alt="">
                                 <div class="category_social_icon">
                                     <ul>
-                                        <li><a href="#"><i class="ti-heart"></i></a></li>
+                                        <li><a [routerLink]="['/products',cat.id]">Detail</a></li>
                                         <li><a href="#"><i class="ti-bag"></i></a></li>
                                     </ul>
                                 </div>
@@ -68,6 +68,8 @@
     </div>
 </section>
 <!--================End Category Product Area =================-->
+
+
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Article } from '../../models/article/article';
 import { Observable, throwError } from 'rxjs';
 import { map, retry, catchError } from 'rxjs/operators';
@@ -22,6 +22,12 @@ export class ArticleService {
 
   getArticles() {
     return this._http.get<Article[]>(this.baseUrl + 'articles', this.httpOptions);
+  }
+
+  getArticle(numero: number) {
+    const  params = new  HttpParams({fromString:  'id=' + numero});
+
+    return this._http.get<Promise<Article>>(this.baseUrl + 'articles/' + numero);
   }
 
 
