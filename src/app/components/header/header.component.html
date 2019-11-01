@@ -30,7 +30,7 @@
                     </div>
                     <div class="hearer_icon d-flex">
                         <div>
-                            <a *ngIf="!getToken()" href="/login" class="btn btn-default btn-rounded">Login</a>
+                            <a *ngIf="!getToken()" href="/login" class="btn btn-default btn-rounded ti-user" >&nbsp;Login</a>
                             <button *ngIf="getToken()" class="btn btn-default btn-rounded" (click)="logout()">Logout</button>
                                 <a id="search_1" href="javascript:void(0)"><i class="ti-search"  (click)="toggle()"></i></a>
                         </div>
@@ -42,11 +42,11 @@
         </div>
     </div>
     <div class="search_input" id="search_input_box" [hidden] = "isShow" >
-        <div class="container ">
-            <form class="d-flex justify-content-between search-inner">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
-                <span class="ti-close" id="close_search" title="Close Search"  (click)="toggle()"></span>
+        <div class="container " style="background-color: #fa7705;">
+            <form class="d-flex justify-content-between search-inner" [formGroup]="recForm" (ngSubmit)="redirection()">
+                <input type="text" class="form-control" id="search_input" placeholder="Faites vos recherches ici !" formControlName="variable">
+                <button type="submit" class="btn"><i class="ti-search"></i></button>
+                <!--<span class="ti-close" id="close_search" title="Close Search"  (click)="toggle()"></span>-->
             </form>
         </div>
     </div>

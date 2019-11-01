@@ -8,5 +8,5 @@ export class Article {
     image: any;
     // tslint:disable-next-line: variable-name
     created_by: string;
-    dateAjout: string;
+    dateAjout: Date;
 }

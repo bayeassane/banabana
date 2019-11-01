@@ -30,6 +30,10 @@ export class ArticleService {
     return this._http.get<Promise<Article>>(this.baseUrl + 'articles/' + numero);
   }
 
+  searchArticles(param: string) {
+    return this._http.get<Observable<Article[]>>(this.baseUrl + 'articless?nom=' + param);
+  }
+
 
   errorHandl(error) {
     let errorMessage = '';

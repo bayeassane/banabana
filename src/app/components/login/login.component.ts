@@ -35,10 +35,12 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword).subscribe((data => {
       if (data.token) {
         localStorage.setItem('access_token', data.token);
-        this.router.navigateByUrl('/loumas');
+        this.router.navigateByUrl('/');
       } else {
-        this.erorCon = false;
-        this.router.navigate(['/login']);
+        this.erorCon = true;
+        console.log(this.erorCon);
+        return;
+        // this.router.navigate(['/login']);
       }
     }));
 
