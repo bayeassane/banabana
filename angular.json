@@ -1,4 +1,5 @@
 {
+  
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
@@ -86,6 +87,7 @@
             "browserTarget": "BanaBana:build"
           }
         },
+        
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

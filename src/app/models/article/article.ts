@@ -5,7 +5,7 @@ export class Article {
     categorie: string;
     prix: number;
     desc: string;
-    image: any;
+    image: string;
     // tslint:disable-next-line: variable-name
     created_by: string;
     dateAjout: Date;
