@@ -27,7 +27,7 @@ export class ArticleService {
   getArticle(numero: number) {
     const  params = new  HttpParams({fromString:  'id=' + numero});
 
-    return this._http.get<Promise<Article>>(this.baseUrl + 'articles/' + numero);
+    return this._http.get<Article>(this.baseUrl + 'articles/' + numero);
   }
 
   searchArticles(param: string) {
