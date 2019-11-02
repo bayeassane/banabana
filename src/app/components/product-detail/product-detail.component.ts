@@ -11,13 +11,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product-detail.component.sass']
 })
 export class ProductDetailComponent implements OnInit {
-  //product: Promise<Article>;
-  product = new Promise(
-    (resolve, reject) =>  {
-      resolve(this.product);
-    }
-  );
-
+  product: Promise<Article>;
+ 
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   ngOnInit() {
