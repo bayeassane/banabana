@@ -1,5 +1,6 @@
-<h2 style="text-align: center;">La liste des loumas !!</h2><br><br>
-<table  class="table table-hover table-striped table-bordered table-sm">
+<app-spinner *ngIf="!loumas"></app-spinner>
+<h2 style="text-align: center;" *ngIf="loumas">La liste des loumas !!</h2><br><br>
+<table  class="table table-hover table-striped table-bordered table-sm" *ngIf="loumas">
     <thead>
       <tr>
         <th>Nom</th>

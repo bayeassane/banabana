@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   boxForm: FormGroup;
   isSubmitted  =  false;
+  onLoad = false;
   erorCon = false;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
@@ -34,9 +35,12 @@ export class LoginComponent implements OnInit {
   get f() { return this.boxForm.controls; }
 
   login() {
+    this.onLoad = true;
+    this.erorCon = false;
     console.log(this.boxForm.value);
     this.isSubmitted = true;
     if (this.boxForm.invalid) {
+      this.onLoad = false;
       return;
     }
     this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword)
@@ -46,7 +50,9 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['/']);
             },
             (error: HttpErrorResponse) => {
+              this.isSubmitted = false;
               this.erorCon = true;
+              this.onLoad = false;
               console.log(error.error);
             });
 

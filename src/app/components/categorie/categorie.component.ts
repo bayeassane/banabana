@@ -23,11 +23,9 @@ export class CategorieComponent implements OnInit {
   }
 
   getItems() {
-    this.categorieService.getCategorie().pipe(
-      map((data) => {
-        this.categories = data;
-      })
-    );
+    this.categorieService.getCategorie().subscribe((data => {
+      this.categories = data;
+    }));
   }
 
 }

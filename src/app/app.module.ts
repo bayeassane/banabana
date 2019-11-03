@@ -23,6 +23,7 @@ import { PlusRecentComponent } from './components/plus-recent/plus-recent.compon
 import { LoginComponent } from './components/login/login.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,8 @@ export function tokenGetter() {
     PlusRecentComponent,
     LoginComponent,
     ProductDetailComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

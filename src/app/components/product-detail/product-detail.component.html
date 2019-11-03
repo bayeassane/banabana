@@ -1,3 +1,4 @@
+<app-spinner *ngIf="!product"></app-spinner>
 <div *ngIf="product">
 <div class="card">
     <div class="container-fliud">
@@ -26,7 +27,7 @@
                 </p>
                 <h4 class="price">current price: <span>{{product.prix}}</span>&nbsp;Fcfa</h4>
                 <p class="vote"> Vous pouvez contacter le vendeur pour négocier le produit </p>
-                <h5 class="sizes">sizes:
+                <h5 class="sizes">Vendeur:
                     <span class="size" data-toggle="tooltip" title="small">Cheikh Thiam</span>
                 </h5>
                 <h5 class="colors">Téléphone:
