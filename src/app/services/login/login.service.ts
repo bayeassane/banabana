@@ -5,7 +5,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { tap } from 'rxjs/operators';
 import { UserLogin } from 'src/app/models/user-login/user-login';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -27,4 +26,5 @@ logout() {
 public  loggedIn(): boolean {
   return localStorage.getItem('access_token') !==  null;
 }
+
 }

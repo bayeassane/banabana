@@ -31,7 +31,7 @@ export class ArticleService {
   }
 
   searchArticles(param: string) {
-    return this._http.get<Observable<Article[]>>(this.baseUrl + 'articless?nom=' + param);
+    return this._http.get<Article[]>(this.baseUrl + 'articless?nom=' + param);
   }
 
 

@@ -1,12 +1,28 @@
-<p>
-    Page Loumas en construction!
-    Page Loumas en construction!
-    Page Loumas en construction!
-    Page Loumas en construction!
-</p>
-<p>
-    Page Loumas en construction!
-    Page Loumas en construction!
-    Page Loumas en construction!
-    Page Loumas en construction!
-</p>
+<table  class="table table-hover table-striped table-bordered table-sm">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Jour</th>
+        <th>Zone</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of loumas" >
+        <!--      <td>{{i + 1 + (pagination.current - 1) * pagination.perPage}}</td>-->
+        <td>{{record.nom}}</td>
+        <td>{{record.jour}}</td>
+        <ng-container *ngFor="let item of zone">
+            <td *ngIf ="item.id==record.zone"> 
+                {{item.departement}}
+              </td>
+        </ng-container>
+        <ng-container *ngFor="let item of zone">
+            <td *ngIf ="item.id==record.zone"> 
+                {{item.description}}
+              </td>
+        </ng-container>               
+      </tr>
+    </tbody>
+  
+  </table>

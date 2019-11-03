@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductDetailComponent implements OnInit {
   product: Article;
- 
+
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   ngOnInit() {

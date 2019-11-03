@@ -47,6 +47,8 @@ redirection() {
   if (this.recForm.invalid) {
     return;
   } else {
+    this.isShow = true;
+
     this.router.navigate(['search/' + this.recForm.value.variable]);
   }
 }

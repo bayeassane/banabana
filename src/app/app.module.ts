@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: '', component: PlusRecentComponent },
   { path: 'login', component: LoginComponent },
   { path: 'products/:id', component: ProductDetailComponent },
-  { path: 'search/:term', component: ProductDetailComponent },
+  { path: 'search/:query', component: SearchResultComponent },
   { path: 'categories', component: CategorieComponent },
   { path: 'terms', component: CategorieComponent },
   { path: 'loumas', component: LoumaComponent },

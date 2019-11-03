@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Categorie } from 'src/app/models/categorie/categorie';
 import { throwError, Observable } from 'rxjs';
+import { Louma } from 'src/app/models/louma/louma';
+import { Zone } from 'src/app/models/zone/zone';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,17 @@ export class CategorieService {
     return this._http.get<Observable<Categorie[]>>(this.baseUrl + 'categorie', this.httpOptions);
   }
 
+  getLoumas() {
+    return this._http.get<Louma[]>(this.baseUrl + 'louma', this.httpOptions);
+  }
+
+  getZone(id: number) {
+    return this._http.get<Observable<Zone>>(this.baseUrl + 'zone/' + id, this.httpOptions);
+  }
+
+  getZones() {
+    return this._http.get<Observable<Zone>>(this.baseUrl + 'zone/', this.httpOptions);
+  }
 
   errorHandl(error) {
     let errorMessage = '';
@@ -34,5 +47,7 @@ export class CategorieService {
     console.log(errorMessage);
     return throwError(errorMessage);
  }
+
+ 
 
 }

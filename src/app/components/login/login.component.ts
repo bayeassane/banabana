@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
+import { UserLogin } from 'src/app/models/user-login/user-login';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +28,9 @@ export class LoginComponent implements OnInit {
   });
 
   }
+
+
+
   get f() { return this.boxForm.controls; }
 
   login() {
@@ -32,17 +39,16 @@ export class LoginComponent implements OnInit {
     if (this.boxForm.invalid) {
       return;
     }
-    this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword).subscribe((data => {
-      if (data.token) {
-        localStorage.setItem('access_token', data.token);
-        this.router.navigateByUrl('/');
-      } else {
-        this.erorCon = true;
-        console.log(this.erorCon);
-        return;
-        // this.router.navigate(['/login']);
-      }
-    }));
+    this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword)
+        .subscribe(
+            data => {
+              localStorage.setItem('access_token', data.token);
+              this.router.navigate(['/']);
+            },
+            (error: HttpErrorResponse) => {
+              this.erorCon = true;
+              console.log(error.error);
+            });
 
   }
   get formControls() { return this.boxForm.controls; }
@@ -50,6 +56,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.connexion();
   }
+ // error
+errorHandl(error) {
+  let errorMessage = '';
+  if (error.error instanceof ErrorEvent) {
+    // Get client-side error
+    errorMessage = error.error.message;
+  } else {
+    // Get server-side error
+    errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  }
+  console.log(errorMessage);
+  return throwError(errorMessage);
+}
 
 
 

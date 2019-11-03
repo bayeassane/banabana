@@ -5,12 +5,13 @@
 				<h3>Se Connecter</h3>
 				
 			</div>
+			<div style="color: orange; text-align: center;" *ngIf="erorCon">
+				Login et ou mot de passe incorrecte !
+		</div>
 			<div class="card-body">
 				<form [formGroup]="boxForm" [formGroup]="boxForm" (ngSubmit)="login()">
 					<div class="input-group form-group">
-                            <div style="color: orange;" *ngIf="erorCon">
-                                    Le nom d'utilisateur est réquis !
-                            </div>
+                            
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
