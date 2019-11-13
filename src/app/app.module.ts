@@ -24,6 +24,10 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ListArticleComponent } from './components/list-article/list-article.component';
+import { AjoutArticleComponent } from './components/ajout-article/ajout-article.component';
+
+
 
 
 const routes: Routes = [
@@ -55,7 +59,9 @@ export function tokenGetter() {
     LoginComponent,
     ProductDetailComponent,
     SearchResultComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ListArticleComponent,
+    AjoutArticleComponent
   ],
   imports: [
     BrowserModule,
