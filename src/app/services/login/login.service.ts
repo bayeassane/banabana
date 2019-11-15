@@ -24,11 +24,11 @@ logout() {
 
 // l'utilisateur est il connecté
 public  loggedIn(): boolean {
-  // return localStorage.getItem('access_token') !==  null;
-  const token = localStorage.getItem('access_token');
+  return localStorage.getItem('access_token') !==  null;
+  // const token = localStorage.getItem('access_token');
     // Check whether the token is expired and return
     // true or false
-  return !this.jwtHelper.isTokenExpired(token);
+  // return !this.jwtHelper.isTokenExpired(token);
 }
 
 }
