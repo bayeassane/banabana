@@ -13,7 +13,7 @@
       <!-- /.col-lg-3 -->
       <div class="col-lg-9">
         <div class="card-group">
-            <div class="card" *ngFor="let item articles">
+            <div class="card" *ngFor="let item of articles">
                 <img class="card-img-top" src="{{ item.image }}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.nom }}</h5>
