@@ -14,6 +14,7 @@ export class ListArticleComponent implements OnInit {
 articleUser() {
   const user = localStorage.getItem('user_connect');
   this.articleService.articleUser(user).subscribe((data) => {
+    console.log(data);
     this.articles = data;
   });
 }
