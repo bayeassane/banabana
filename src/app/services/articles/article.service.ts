@@ -10,7 +10,7 @@ import { map, retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ArticleService {
-  private baseUrl = 'https://uadb-gainde.herokuapp.com/testApp/';
+  private baseUrl = 'https://banabanaapi.herokuapp.com/testApp/';
   private header = new HttpHeaders({'Content-Type' : 'application/json'});
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,6 +34,15 @@ export class ArticleService {
     return this._http.get<Article[]>(this.baseUrl + 'articless?nom=' + param);
   }
 
+  articleUser(user) {
+    return this._http.get<Article[]>(this.baseUrl + 'articlesUser?id=' + user);
+  }
+
+
+  public upload(formData, token) {
+    console.log(token);
+    return this._http.post<any>(this.baseUrl + 'articles/', formData);
+  }
 
   errorHandl(error) {
     let errorMessage = '';

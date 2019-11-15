@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 })
 export class PlusRecentService {
 
-  private baseUrl = 'https://uadb-gainde.herokuapp.com/testApp/';
+  private baseUrl = 'https://banabanaapi.herokuapp.com/testApp/';
   private header = new HttpHeaders({'Content-Type' : 'application/json'});
   httpOptions = {
     headers: new HttpHeaders({

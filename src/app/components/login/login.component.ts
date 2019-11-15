@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
             data => {
               localStorage.setItem('access_token', data.token);
+              localStorage.setItem('user_connect', '' + data.user.id);
               this.router.navigate(['/']);
             },
             (error: HttpErrorResponse) => {

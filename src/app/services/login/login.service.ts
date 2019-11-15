@@ -14,7 +14,8 @@ export class LoginService {
 
   // Connection
   login(username: string, password: string) {
-    return this.httpClient.post<UserLogin>('https://uadb-gainde.herokuapp.com/testApp/login', {username, password});
+    return this.httpClient.post<UserLogin>('https://banabanaapi.herokuapp.com/testApp/', {username, password});
+    
     }
 
 // Deconnection

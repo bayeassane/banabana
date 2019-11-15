@@ -10,7 +10,7 @@ import { Zone } from 'src/app/models/zone/zone';
 })
 export class CategorieService {
 
-  private baseUrl = 'https://uadb-gainde.herokuapp.com/testApp/';
+  private baseUrl = 'https://banabanaapi.herokuapp.com/testApp/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
