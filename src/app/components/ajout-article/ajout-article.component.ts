@@ -68,7 +68,7 @@ export class AjoutArticleComponent implements OnInit {
     this.articleService.upload(formData, token).subscribe(
       (res) => {
         console.log('ok');
-        this.router.navigate(['articles']);
+        this.router.navigate(['listArticle']);
       },
       (err) => {
         console.log(err);
