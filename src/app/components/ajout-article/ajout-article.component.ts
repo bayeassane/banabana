@@ -56,6 +56,7 @@ export class AjoutArticleComponent implements OnInit {
     const formData = new FormData();
     formData.append('image', this.boxForm.value.image);
     formData.append('nom', this.boxForm.value.nom);
+    formData.append('desc', this.boxForm.value.description);
     formData.append('louma', this.boxForm.value.louma);
     formData.append('categorie', this.boxForm.value.cat);
     formData.append('prix', this.boxForm.value.prix);
