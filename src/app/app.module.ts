@@ -29,7 +29,6 @@ import { AjoutArticleComponent } from './components/ajout-article/ajout-article.
 
 
 
-
 const routes: Routes = [
   { path: '', component: PlusRecentComponent },
   { path: 'login', component: LoginComponent },

@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { CategorieComponent } from './components/categorie/categorie.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { AjoutArticleComponent } from './components/ajout-article/ajout-article.component';
 import { ListArticleComponent } from './components/list-article/list-article.component';
 
+import { AuthGuardService as AuthGuard } from 'src/app/services/auth-guard/auth-guard.service';
+
 
 const routes: Routes = [
-  { path: 'categorie',component: CategorieComponent},
-  { path: 'articles',component: ArticlesComponent},
-  { path: 'ajoutArticle',component: AjoutArticleComponent},
-  { path: 'listArticle',component: ListArticleComponent}
-  
+  { path: 'categorie', component: CategorieComponent},
+  { path: 'articles', component: ArticlesComponent},
+  { path: 'ajoutArticle', component: AjoutArticleComponent,  canActivate: [AuthGuard] },
+  { path: 'listArticle', component: ListArticleComponent,  canActivate: [AuthGuard] }
 ];
 
 @NgModule({
