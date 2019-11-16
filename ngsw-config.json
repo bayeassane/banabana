@@ -32,7 +32,10 @@
       "urls": [
         "https://banabanaapi.herokuapp.com/testApp/articles",
         "https://banabanaapi.herokuapp.com/testApp/login",
-        "https://banabanaapi.herokuapp.com/testApp/articleLimit"
+        "https://banabanaapi.herokuapp.com/testApp/articleLimit",
+        "https://banabanaapi.herokuapp.com/testApp/articlesCategorie?nomCategorie",
+        "https://banabanaapi.herokuapp.com/testApp/louma",
+        "https://banabanaapi.herokuapp.com/testApp/zone"
       ],
       "cacheConfig": {
         "strategy": "performance",
