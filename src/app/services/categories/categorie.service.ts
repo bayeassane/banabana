@@ -48,6 +48,6 @@ export class CategorieService {
     return throwError(errorMessage);
  }
 
- 
+
 
 }

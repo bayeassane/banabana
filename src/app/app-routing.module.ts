@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'categorie', component: CategorieComponent},
   { path: 'articles', component: ArticlesComponent},
   { path: 'ajoutArticle', component: AjoutArticleComponent,  canActivate: [AuthGuard] },
-  { path: 'listArticle', component: ListArticleComponent,  canActivate: [AuthGuard] }
+  { path: 'liste-de-mes-articles', component: ListArticleComponent,  canActivate: [AuthGuard] }
 ];
 
 @NgModule({

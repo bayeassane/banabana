@@ -5,8 +5,8 @@
       <div class="col-lg-3">
         <h1 class="my-4">BanaBana</h1>
         <div class="list-group">
-          <a routerLink="/listArticle" class="list-group-item active">Liste des articles</a>
-          <a routerLink="/ajoutArticle" class="list-group-item">Ajouter un article</a>
+          <span class="list-group-item active">Liste des articles de la catégorie {{ nomCat }}</span>
+          <!-- <span class="list-group-item">Ajouter un article </span> -->
 
         </div>
       </div>
@@ -14,30 +14,16 @@
 
       <div class="col-lg-9">
         <div class="card-group">
-            <div class="card">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" alt="Card image cap">
+            <div class="card" *ngFor="let item of resultats" style="max-height: 400px; min-height: 400px; max-width: 300px;">
+              <img class="card-img-top" src="{{ item.image }}" alt="Card image cap" style="max-height: 200px; min-height: 200px;">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{ item.nom }}</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
+            
+            
           </div>
         <!-- /.card -->
 

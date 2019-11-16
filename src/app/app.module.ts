@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'search/:query', component: SearchResultComponent },
   { path: 'categories', component: CategorieComponent },
+  { path: 'categorie/:nomCategorie', component: ArticlesComponent },
   { path: 'terms', component: CategorieComponent },
   { path: 'loumas', component: LoumaComponent },
   { path: 'logout', component: PlusRecentComponent },

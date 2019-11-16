@@ -24,6 +24,10 @@ export class ArticleService {
     return this._http.get<Article[]>(this.baseUrl + 'articles', this.httpOptions);
   }
 
+  getArticlesCategorie(nomCat: string) {
+    return this._http.get<Article[]>(this.baseUrl + 'articlesCategorie?nomCategorie=' + nomCat, this.httpOptions);
+  }
+
   getArticle(numero: number) {
     const  params = new  HttpParams({fromString:  'id=' + numero});
 
