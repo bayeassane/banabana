@@ -25,5 +25,20 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-banabana",
+      "urls": [
+        "https://banabanaapi.herokuapp.com/testApp/articles",
+        "https://banabanaapi.herokuapp.com/testApp/login",
+        "https://banabanaapi.herokuapp.com/testApp/articleLimit"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "1d",
+        "maxSize": 100
+      }
+    }
   ]
 }
