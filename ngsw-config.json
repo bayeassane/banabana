@@ -35,7 +35,8 @@
         "https://banabanaapi.herokuapp.com/testApp/articleLimit",
         "https://banabanaapi.herokuapp.com/testApp/articlesCategorie?nomCategorie",
         "https://banabanaapi.herokuapp.com/testApp/louma",
-        "https://banabanaapi.herokuapp.com/testApp/zone"
+        "https://banabanaapi.herokuapp.com/testApp/zone",
+        "https://banabanaapi.herokuapp.com/testApp/categorie"
       ],
       "cacheConfig": {
         "strategy": "performance",
