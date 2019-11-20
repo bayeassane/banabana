@@ -22,7 +22,7 @@
             <div class="form-group">
               <label for="louma">Louma:</label>
               <select class="form-control" id="louma" formControlName="louma" id="">
-                    <option *ngFor="let item of loumas" [value]="item.nom">{{item.nom}}</option>
+                    <option *ngFor="let item of loumas" [value]="item['id']">{{item.nom}}</option>
               </select>
               <!--<input type="text" class="form-control" id="louma"  formControlName="louma">-->
             </div>
