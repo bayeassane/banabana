@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/services/categories/categorie.service';
 import { Louma } from 'src/app/models/louma/louma';
 import { Categorie } from 'src/app/models/categorie/categorie';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-ajout-article',
   templateUrl: './ajout-article.component.html',
@@ -23,11 +23,11 @@ export class AjoutArticleComponent implements OnInit {
   categories: Observable<Categorie[]>;
 
   constructor(private categorieService: CategorieService, private formBuilder: FormBuilder,
-              private router: Router, private articleService: ArticleService) { }
+              private router: Router, private articleService: ArticleService, private toast: ToastrService) { }
 
   initial() {
     this.boxForm  =  this.formBuilder.group({
-      nom: ['yup', Validators.required],
+      nom: ['', Validators.required],
       louma: ['', Validators.required],
       cat: ['', Validators.required],
       prix: ['', Validators.required],
@@ -68,7 +68,8 @@ export class AjoutArticleComponent implements OnInit {
     this.articleService.upload(formData, token).subscribe(
       (res) => {
         console.log('ok');
-        this.router.navigate(['listArticle']);
+        this.toast.success('AJout avec succès !');
+        this.router.navigate(['liste-de-mes-articles']);
       },
       (err) => {
         console.log(err);

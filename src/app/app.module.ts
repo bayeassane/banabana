@@ -27,6 +27,10 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ListArticleComponent } from './components/list-article/list-article.component';
 import { AjoutArticleComponent } from './components/ajout-article/ajout-article.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 const routes: Routes = [
@@ -78,7 +82,9 @@ export function tokenGetter() {
       }
     }),
     RouterModule.forRoot(routes),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ArticleService, LoginService, PlusRecentService],
   bootstrap: [AppComponent]

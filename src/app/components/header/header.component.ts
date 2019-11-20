@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/article/article';
 import { ArticleService } from 'src/app/services/articles/article.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
   erorParam = false;
   element: HTMLElement;
 
-  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder, private toast: ToastrService) { }
 
   toggle() {
     this.isShow = !this.isShow;
@@ -30,6 +31,7 @@ getToken(): boolean {
 }
 logout() {
   this.loginService.logout();
+  this.toast.warning('Vous êtes déconneté !');
   this.router.navigate(['/']);
 }
 

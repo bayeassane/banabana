@@ -39,14 +39,20 @@ export class ArticleService {
   }
 
   articleUser(user) {
+    console.log(user);
     return this._http.get<Article[]>(this.baseUrl + 'articlesUser?id=' + user);
   }
 
+  deleteArticle(id: number) {
+    console.log()
+  }
 
   public upload(formData, token) {
     console.log(token);
     return this._http.post<any>(this.baseUrl + 'articles/', formData);
   }
+
+
 
   errorHandl(error) {
     let errorMessage = '';

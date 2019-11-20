@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/article/article';
 import { PlusRecentService } from 'src/app/services/plus-recent/plus-recent.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-plus-recent',
@@ -11,7 +12,7 @@ export class PlusRecentComponent implements OnInit {
 
   plArticles: Article [];
 
-  constructor(public plService: PlusRecentService) { }
+  constructor(public plService: PlusRecentService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getItems();
@@ -23,6 +24,13 @@ export class PlusRecentComponent implements OnInit {
       this.plArticles = data;
       console.log(data);
     });
+  }
+
+  plusRecentArticle(id: number) {
+
+    console.log(id);
+    this.router.navigate(['/products', id]);
+
   }
 
 }

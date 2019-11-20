@@ -15,7 +15,7 @@
                 <h3 class="product-title">{{product.nom}}</h3>
                 
                 <p class="product-description">
-                    {{ produit.desc }}
+                    {{ product.desc }}
                 </p>
                 <h4 class="price">current price: <span>{{product.prix}}</span>&nbsp;Fcfa</h4>
                 <p class="vote"> Vous pouvez contacter le vendeur pour négocier le produit </p>
@@ -30,7 +30,8 @@
                 </h5>
                 
             </div>
-        </div>
+        </div><br><br>
+        <button (click)="onBack()" class="btn btn-primary">Retour</button>
     </div>
 </div>
 </div>

@@ -5,15 +5,15 @@
       <div class="col-lg-3">
         <h1 class="my-4">BanaBana</h1>
         <div class="list-group">
-          <a routerLink="/listArticle" class="list-group-item ">Liste des articles</a>
-          <a routerLink="/liste-de-mes-articles" class="list-group-item active">Ajouter un article</a>
+          <a routerLink="/liste-de-mes-articles" class="list-group-item ">Liste des articles</a>
+          <a routerLink="/ajoutArticle" class="list-group-item active">Ajouter un article</a>
 
         </div>
       </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-
+          <h1 class="my-4">Ajouter un article</h1>
         <form [formGroup]="boxForm"  (ngSubmit)="ajouter()">
             <div class="form-group">
               <label for="name">Nom Article:</label>
@@ -22,9 +22,7 @@
             <div class="form-group">
               <label for="louma">Louma:</label>
               <select class="form-control" id="louma" formControlName="louma" id="">
-                 <ng-container *ngFor="let item of loumas">
-                    <option value="{{item.id}}">{{item.nom}}</option>
-                </ng-container>
+                    <option *ngFor="let item of loumas" [value]="item.nom">{{item.nom}}</option>
               </select>
               <!--<input type="text" class="form-control" id="louma"  formControlName="louma">-->
             </div>
@@ -39,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label for="prix">Prix:</label>
-                <input type="text" class="form-control" id="prix"  formControlName="prix">
+                <input type="number" class="form-control" id="prix"  formControlName="prix">
             </div>
             <div class="form-group">
                 <label for="img">Image:</label>
@@ -51,7 +49,7 @@
               </div>
             
             
-            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="submit" class="btn btn-primary" value="Submit" [disabled]="boxForm.invalid" ><br><br>
           </form>
         <!-- /.card -->
         <!-- /.card -->

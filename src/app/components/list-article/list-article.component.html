@@ -2,16 +2,34 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
+      <div class="col-md-3">
         <h1 class="my-4">BanaBana</h1>
         <div class="list-group">
-          <a routerLink="/listArticle" class="list-group-item active">Liste des articles</a>
-          <a routerLink="/ajoutArticle" class="list-group-item ">Ajouter un article</a>
+          <a routerLinkActive="active" routerLink="/liste-de-mes-articles" class="list-group-item">Liste des articles</a>
+          <a routerLinkActive="active" routerLink="/ajoutArticle" class="list-group-item ">Ajouter un article</a>
 
         </div>
       </div>
+
+     <div class="col-md-9">
+       <h1 class="my-4">La liste des mes articles</h1>
+        <div class="row">
+          <div *ngFor="let item of articles" class="col-lg-4 col-sm-8 col-md-6">
+           <div class="col-md-10">
+             <img *ngIf="item.image"  style="max-height: 200px; min-height: 200px; max-width: 250px; min-width: 250px;" src="{{ item.image }}" alt="">
+             <div class="card-body">
+                <h5 class="card-title">{{ item.nom }}</h5>
+                <p class="card-text">{{item.desc}}.</p>
+                <p class="card-text"><small class="text-muted">ajouté le {{ item.created_by }}</small></p>
+                <p><small class="btn btn-primary">Edit</small><small class="btn btn-danger">Supp</small></p>
+            </div>
+              
+           </div>
+          </div>
+        </div>
+     </div>
       <!-- /.col-lg-3 -->
-      <div class="col-lg-9">
+      <!--      <div class="col-lg-9">
         <div class="card-group">
             <div class="card" *ngFor="let item of articles">
                 <img class="card-img-top" src="{{ item.image }}" alt="Card image cap" style="max-height: 200px; min-height: 200px;">
@@ -22,27 +40,12 @@
                   <p class="card-text"><small class="text-muted">ajouté le {{ item.created_by }}</small></p>
                 </div>
               </div>
-            <!-- <div class="card">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div> -->
+           
           </div>
-        <!-- /.card -->
 
       </div>
-     
+    -->
+
       <!-- /.col-lg-9 -->
 
     </div>

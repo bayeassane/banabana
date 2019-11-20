@@ -7,6 +7,9 @@ import { map } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { UserLogin } from 'src/app/models/user-login/user-login';
 
+import { ToastrService } from 'ngx-toastr';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +22,7 @@ export class LoginComponent implements OnInit {
   onLoad = false;
   erorCon = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService, private toast: ToastrService) { }
 
 
   connexion() {
@@ -48,6 +51,7 @@ export class LoginComponent implements OnInit {
             data => {
               localStorage.setItem('access_token', data.token);
               localStorage.setItem('user_connect', '' + data.user.id);
+              this.toast.success('Vous êtes connecté !');
               this.router.navigate(['/']);
             },
             (error: HttpErrorResponse) => {

@@ -49,12 +49,12 @@
                                 <img src="{{cat.image}}" alt="" style="max-height: 200px; min-height: 200px;">
                                 <div class="category_social_icon">
                                     <ul style="color: #fa7705;">
-                                        <li><a [routerLink]="['/products',cat.id]">Detail</a></li>
+                                        <li><a  (click)="plusRecentArticle(cat['id'])">Detail</a></li>
                                         <li><a href="#"><i class="ti-bag"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="category_product_text">
-                                    <a href="/categorie/{{cat.id}}"><h5>{{cat.nom}}</h5></a>
+                                    <a href="/categorie/cat.id"><h5>{{cat.nom}}</h5></a>
                                     
                                 </div>
                             </div>
