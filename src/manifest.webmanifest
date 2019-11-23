@@ -1,7 +1,7 @@
 {
   "name": "BanaBana",
   "short_name": "BanaBana",
-  "theme_color": "#fa7705",
+  "theme_color": "#FB9337",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",

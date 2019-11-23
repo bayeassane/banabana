@@ -41,13 +41,9 @@
             <div class="col-md-8 col-xs-12" >
                 <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span></button> &nbsp; &nbsp;
                 <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-pencil"></span></button>
-                <h4 class="list-group-item-heading" > {{ article.nom }} </h4>
-                <ng-container *ngFor="let categorie of categories">
-                    <p class="list-group-item-text" *ngIf="categorie.id === article.categorie"> 
-                <strong>Catégorie</strong> :   {{ categorie.nomCategorie }}
-                      </p>
-                </ng-container> 
-                <p class="list-group-item-text" > <strong>Prix : </strong> :  {{ article.prix }} </p>
+                <h4 class="list-group-item-heading" > {{ article.nom }}, <small> Elevage </small> </h4>
+               
+                <p class="list-group-item-text" style="color:#FB9337" >  {{ article.prix }} Fcfa</p>
                 <p class="list-group-item-text"> {{ article.desc }} </p>
                 <p class="list-group-item-text" > Ajouté depuis :  {{ article.created_at | date }} </p>
                 <div id="myModal" class="modal fade" role="dialog">
