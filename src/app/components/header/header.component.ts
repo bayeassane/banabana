@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
   erorParam = false;
   element: HTMLElement;
 
-  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder, private toast: ToastrService) { }
+  constructor(private loginService: LoginService, private router: Router,
+              private formBuilder: FormBuilder, private toast: ToastrService) { }
 
   toggle() {
     this.isShow = !this.isShow;
