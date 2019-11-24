@@ -5,9 +5,11 @@
       <div class="col-lg-3">
         <h1 class="my-4">BanaBana</h1>
         <div class="list-group">
-          <a routerLink="/liste-de-mes-articles" class="list-group-item ">Liste des articles</a>
-          <a routerLink="/ajoutArticle" class="list-group-item active">Ajouter un article</a>
-
+            <ul class="list-group">
+                <li routerLinkActive="active" style="cursor: pointer;" routerLink="/liste-de-mes-articles" class="list-group-item ">Liste de mes articles</li>
+                <li routerLinkActive="active" style="cursor: pointer;" routerLink="/ajoutArticle" class="list-group-item">Ajouter un article</li>
+            </ul>
+          
         </div>
       </div>
       <!-- /.col-lg-3 -->

@@ -27,6 +27,7 @@ export class ListArticleComponent implements OnInit {
   ngOnInit() {
     this.articleUser();
     this.getCategories();
+    
   }
 
   detailArticle(id: number) {

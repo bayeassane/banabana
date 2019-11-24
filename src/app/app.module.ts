@@ -31,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import { ToastrModule } from 'ngx-toastr';
 
-
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 const routes: Routes = [
   { path: '', component: PlusRecentComponent },
@@ -65,7 +65,8 @@ export function tokenGetter() {
     SearchResultComponent,
     SpinnerComponent,
     ListArticleComponent,
-    AjoutArticleComponent
+    AjoutArticleComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

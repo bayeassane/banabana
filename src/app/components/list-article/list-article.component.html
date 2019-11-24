@@ -5,8 +5,11 @@
       <div class="col-md-3">
         <h1 class="my-4">BanaBana</h1>
         <div class="list-group">
-          <a routerLinkActive="active" routerLink="/liste-de-mes-articles" class="list-group-item">Liste des articles</a>
-          <a routerLinkActive="active" routerLink="/ajoutArticle" class="list-group-item ">Ajouter un article</a>
+            <ul class="list-group">
+                <li routerLinkActive="active" style="cursor: pointer;" routerLink="/liste-de-mes-articles" class="list-group-item ">Liste de mes articles</li>
+                <li routerLinkActive="active" style="cursor: pointer;" routerLink="/ajoutArticle" class="list-group-item">Ajouter un article</li>
+            </ul>
+          
 
         </div>
       </div>
@@ -45,7 +48,7 @@
                
                 <p class="list-group-item-text" style="color:#FB9337" >  {{ article.prix }} Fcfa</p>
                 <p class="list-group-item-text"> {{ article.desc }} </p>
-                <p class="list-group-item-text" > Ajouté depuis :  {{ article.created_at | date }} </p>
+                <p class="list-group-item-text" > Posté {{ article.created_at | timeAgo}} </p>
                 <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
             
