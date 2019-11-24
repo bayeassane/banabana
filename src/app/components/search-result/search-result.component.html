@@ -33,24 +33,16 @@
                     
                 </div>
             </div>
-            <ng-container *ngIf="resultats; else noResult">
-                <div class="col-lg-9">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item" *ngFor="let item of resultats">
-                          <h4 class="list-group-item-heading">Marché: {{item.nom}}</h4>
-                          <p class="list-group-item-text">Tous les {{item.jour}}</p>
-                          <p class="list-group-item-text"></p>
-                        </a>
-                    </div>
+            <div class="col-lg-9">
+                <div class="list-group">
+                    <a href="#" class="list-group-item" *ngFor="let item of resultats">
+                      <h4 class="list-group-item-heading">Marché: {{item.nom}}</h4>
+                      <p class="list-group-item-text">Tous les {{item.jour}}</p>
+                      <p class="list-group-item-text"></p>
+                    </a>
                 </div>
-                <ng-template #noResult>
-                    Pas de resultats pour cette recherche
-                  </ng-template>
-            </ng-container>
-    
+            </div>
         </div>
-              
-              
     </div>
 </section>
 <!--================End Category Product Area =================-->
