@@ -6,13 +6,15 @@ import { AjoutArticleComponent } from './components/ajout-article/ajout-article.
 import { ListArticleComponent } from './components/list-article/list-article.component';
 
 import { AuthGuardService as AuthGuard } from 'src/app/services/auth-guard/auth-guard.service';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
 
 
 const routes: Routes = [
   { path: 'categorie', component: CategorieComponent},
   { path: 'articles', component: ArticlesComponent},
   { path: 'ajoutArticle', component: AjoutArticleComponent,  canActivate: [AuthGuard] },
-  { path: 'liste-de-mes-articles', component: ListArticleComponent,  canActivate: [AuthGuard] }
+  { path: 'liste-de-mes-articles', component: ListArticleComponent,  canActivate: [AuthGuard] },
+  { path: 'articles/edit/:id', component: EditArticleComponent,  canActivate: [AuthGuard] }
 ];
 
 @NgModule({
