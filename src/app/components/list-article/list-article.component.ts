@@ -62,6 +62,10 @@ export class ListArticleComponent implements OnInit {
     
   }
 
+  onEditArticle(id: number) {
+    this.router.navigate(['/articles', 'edit', id])
+  }
+
  
 
   

@@ -9,4 +9,5 @@ export class Article {
     // tslint:disable-next-line: variable-name
     created_by: string;
     created_at: Date;
+    
 }

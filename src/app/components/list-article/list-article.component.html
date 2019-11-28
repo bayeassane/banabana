@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-8 col-xs-12" >
                 <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove ti-trash" data-toggle="modal" [attr.data-target]="'#delete'+i"></span></button> &nbsp; &nbsp;
-                <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-pencil ti-pencil"></span></button>
+                <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-pencil ti-pencil" (click)="onEditArticle(article.id)"></span></button>
                 <h4 class="list-group-item-heading" > {{ article.nom }}, <small> Elevage </small> </h4>
                
                 <p class="list-group-item-text" style="color:#FB9337" >  {{ article.prix }} Fcfa</p>

@@ -1,1 +1,58 @@
-<p>edit-article works!</p>
+<div class="container" style="padding-top: 5%;">
+
+        <div class="row">
+    
+          <div class="col-lg-3">
+            <button class="btn my-4 ti-arrow-left" style="background-color: #fb9337;" (click)="onBack()"></button>
+          </div>
+          <!-- /.col-lg-3 -->
+    
+          <div class="col-lg-9">
+              <h1 class="my-4">Modification de l'article</h1>
+            <form [formGroup]="editForm"  (ngSubmit)="onEdit()">
+                <div class="form-group">
+                  <label for="name">Nom Article:</label>
+                  <input type="text" class="form-control" id="name" formControlName="nom">
+                </div>
+                <div class="form-group">
+                  <label for="louma">Louma:</label>
+                  <select class="form-control" id="louma" formControlName="louma" id="louma">
+                        <option *ngFor="let item of article.louma" [value]="item['id']">{{item.nom}}</option>
+                  </select>
+                  <!--<input type="text" class="form-control" id="louma"  formControlName="louma">-->
+                </div>
+                <div class="form-group">
+                    <label for="name">Categorie:</label>
+                    <select class="form-control" id="louma" formControlName="cat" id="">
+                        <ng-container *ngFor="let cat of categories">
+                           <option value="{{cat.id}}">{{cat.nomCategorie}}</option>
+                       </ng-container>
+                     </select>
+                    <!--<input type="text" class="form-control" id="name"  formControlName="cat">-->
+                </div>
+                <div class="form-group">
+                    <label for="prix">Prix:</label>
+                    <input type="number" class="form-control" id="prix"  formControlName="prix">
+                </div>
+                <div class="form-group">
+                    <label for="img">Image:</label>
+                    <input type="file" class="form-control-file border"  name="image" (change)="onChange($event)">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Description:</label>
+                    <textarea class="form-control" rows="5" id="comment"  formControlName="description" ngModule></textarea>
+                  </div>
+                
+                
+                <input type="submit" class="btn btn-primary" value="Submit" [disabled]="editForm.invalid" ><br><br>
+              </form>
+            <!-- /.card -->
+            <!-- /.card -->
+    
+          </div>
+          <!-- /.col-lg-9 -->
+    
+        </div>
+    
+</div>
+      <!-- /.container -->
