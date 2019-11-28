@@ -32,6 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { TimeagoModule } from 'ngx-timeago';
+
+
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 
 const routes: Routes = [
@@ -74,6 +77,7 @@ export function tokenGetter() {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    TimeagoModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
     JwtModule.forRoot({

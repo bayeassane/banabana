@@ -4,6 +4,7 @@ import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
 
 import { tap } from 'rxjs/operators';
 import { UserLogin } from 'src/app/models/user-login/user-login';
+import { User } from 'src/app/models/user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,10 @@ public  loggedIn(): boolean {
     // Check whether the token is expired and return
     // true or false
   // return !this.jwtHelper.isTokenExpired(token);
+}
+
+getUser(id: number) {
+  return this.httpClient.get<User>('http://banabanaapi.herokuapp.com/testApp/users/'+id);
 }
 
 }

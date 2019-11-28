@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CategorieService } from 'src/app/services/categories/categorie.service';
 import { Observable } from 'rxjs';
 import { Categorie } from 'src/app/models/categorie/categorie';
+import { LoginService } from 'src/app/services/login/login.service';
+import { User } from 'src/app/models/user/user';
 
 @Component({
   selector: 'app-plus-recent',
@@ -15,18 +17,37 @@ export class PlusRecentComponent implements OnInit {
 
   plArticles: Article [];
   categories: Categorie[] ;
+  names: any[]  = [
+  
+  ];
 
 
   constructor(public plService: PlusRecentService, private router: Router, private route: ActivatedRoute,
-              private categorieService: CategorieService) { }
+              private categorieService: CategorieService,
+              private user: LoginService) { }
 
   ngOnInit() {
     this.getItems();
     console.log(this.plArticles);
     
+    
    
   }
 
+
+  getNameUser(id: number) {
+    this.user.getUser(id).subscribe(
+      (user: User) => {
+        console.log(user);
+        return user.username
+      }, (error) => {
+        console.log('Une erreur'+error);
+        return ''
+      }, () => {
+        console.log('Complete')
+      }
+    )
+  }
 
   getItems() {
     this.plService.getArticles().subscribe((data) => {

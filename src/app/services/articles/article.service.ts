@@ -46,7 +46,7 @@ export class ArticleService {
   deleteArticle(id: number) {
     console.log(id);
     console.log(this.baseUrl)
-    return this._http.delete(this.baseUrl + 'articles/' + id);
+    return this._http.delete(this.baseUrl + 'articles/' + id)
   }
 
   public upload(formData, token) {

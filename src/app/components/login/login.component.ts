@@ -3,9 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
-import { UserLogin } from 'src/app/models/user-login/user-login';
 
 import { ToastrService } from 'ngx-toastr';
 
