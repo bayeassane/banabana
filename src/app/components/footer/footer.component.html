@@ -6,10 +6,7 @@
                 <div class="single_footer_part">
                     <h4>Categories</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Elevage</a></li>
-                        <li><a href="#">Maraichère</a></li>
-                        <li><a href="#">Céréales</a></li>
-                        <li><a href="#">Autres</a></li>
+                        <li *ngFor="let categorie of categories"><a>{{ categorie.nomCategorie }}</a></li><br>
                     </ul>
                 </div>
             </div>

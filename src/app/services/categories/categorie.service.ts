@@ -23,6 +23,8 @@ export class CategorieService {
     return this._http.get<Observable<Categorie[]>>(this.baseUrl + 'categorie', this.httpOptions);
   }
 
+  
+
   getLoumas() {
     return this._http.get<Louma[]>(this.baseUrl + 'louma', this.httpOptions);
   }
@@ -33,6 +35,10 @@ export class CategorieService {
 
   getZones() {
     return this._http.get<Observable<Zone>>(this.baseUrl + 'zone/', this.httpOptions);
+  }
+
+  getNameCategorie(id: number) {
+    return this._http.get<Observable<Zone>>(this.baseUrl + 'categorie/' + id, this.httpOptions);
   }
 
   errorHandl(error) {

@@ -1,5 +1,5 @@
 export class Article {
-
+    id: number;
     nom: string;
     louma: string;
     categorie: string;

@@ -44,11 +44,14 @@ export class ArticleService {
   }
 
   deleteArticle(id: number) {
-    console.log()
+    console.log(id);
+    console.log(this.baseUrl)
+    return this._http.delete(this.baseUrl + 'articles/' + id);
   }
 
   public upload(formData, token) {
     console.log(token);
+    
     return this._http.post<any>(this.baseUrl + 'articles/', formData);
   }
 
