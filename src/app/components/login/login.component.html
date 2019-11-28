@@ -42,12 +42,41 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Pas de compte<a href="#">S'inscrire</a>
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalSignUp">
+						S'inscrire
+					  </button>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Mot de passe oublié? Contactez l'admin</a>
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalSignUp">
+						Mot de passe oublié
+					  </button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Inscription</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <p>Veuillez contacter l'administrateur</p>
+		  <p>Numéro :  771904226</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+		</div>
+	  </div>
+	</div>
+  </div>
