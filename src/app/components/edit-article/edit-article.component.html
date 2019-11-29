@@ -9,21 +9,31 @@
     
           <div class="col-lg-9">
               <h1 class="my-4">Modification de l'article</h1>
-            <form [formGroup]="editForm"  (ngSubmit)="onEdit()">
+            <form [formGroup]="editForm"  (ngSubmit)="ajouter()">
                 <div class="form-group">
                   <label for="name">Nom Article:</label>
                   <input type="text" class="form-control" id="name" formControlName="nom">
                 </div>
+
+                
+                    <input type="hidden" class="form-control" id="id" formControlName="id">
+                    <input type="hidden" class="form-control" id="created_at" formControlName="created_at">
+                    <input type="hidden" class="form-control" id="created_by" formControlName="created_by">
+                    <input type="hidden" class="form-control" id="lastmodified_at" formControlName="lastmodified_at">
+                  
+
                 <div class="form-group">
                   <label for="louma">Louma:</label>
                   <select class="form-control" id="louma" formControlName="louma" id="louma">
-                        <option *ngFor="let item of article.louma" [value]="item['id']">{{item.nom}}</option>
+                      <ng-container *ngFor="let item of loumas">
+                          <option  [value]="item['id']">{{item.nom}}</option>
+                      </ng-container>
                   </select>
                   <!--<input type="text" class="form-control" id="louma"  formControlName="louma">-->
                 </div>
                 <div class="form-group">
                     <label for="name">Categorie:</label>
-                    <select class="form-control" id="louma" formControlName="cat" id="">
+                    <select class="form-control" id="louma" formControlName="categorie" id="">
                         <ng-container *ngFor="let cat of categories">
                            <option value="{{cat.id}}">{{cat.nomCategorie}}</option>
                        </ng-container>
@@ -36,11 +46,11 @@
                 </div>
                 <div class="form-group">
                     <label for="img">Image:</label>
-                    <input type="file" class="form-control-file border"  name="image">
+                    <input type="file" class="form-control-file border"  name="image" (change)="onChange($event)">
                 </div>
                 <div class="form-group">
                     <label for="comment">Description:</label>
-                    <textarea class="form-control" rows="5" id="comment"  formControlName="description" ngModule></textarea>
+                    <textarea class="form-control" rows="5" id="comment"  formControlName="desc" ngModule></textarea>
                   </div>
                 
                 

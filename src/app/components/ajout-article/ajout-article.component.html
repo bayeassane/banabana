@@ -24,7 +24,10 @@
             <div class="form-group">
               <label for="louma">Louma:</label>
               <select class="form-control" id="louma" formControlName="louma" id="">
-                    <option *ngFor="let item of loumas" [value]="item['id']">{{item.nom}}</option>
+                    <ng-container *ngFor="let item of loumas">
+                        <option  [value]="item['id']">{{item.nom}}</option>
+                    </ng-container>
+                    
               </select>
               <!--<input type="text" class="form-control" id="louma"  formControlName="louma">-->
             </div>

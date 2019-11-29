@@ -15,7 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 export class ListArticleComponent implements OnInit {
   articles: Article[]=[];
   categories: Observable<Categorie[]> ;
-  constructor(private articleService: ArticleService, private router: Router, private categorieService: CategorieService, private toastr: ToastrService) { }
+  constructor(private articleService: ArticleService, private router: Router,
+              private categorieService: CategorieService, private toastr: ToastrService) { }
 
   articleUser() {
     const user = localStorage.getItem('user_connect');
@@ -57,17 +58,12 @@ export class ListArticleComponent implements OnInit {
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
         this.router.navigate(['liste-de-mes-articles']));
       }
-    )
-
-    
+    );
   }
 
   onEditArticle(id: number) {
-    this.router.navigate(['/articles', 'edit', id])
+    this.router.navigate(['/articles', 'edit', id]);
   }
 
- 
-
-  
 
 }
