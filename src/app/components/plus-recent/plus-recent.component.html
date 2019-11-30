@@ -10,21 +10,13 @@
                         <div class="l_w_title">
                             <h3>Choisir une catégorie</h3>
                         </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <a href="categorie/agriculture">Agriculture</a>
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <a href="categorie/elevage">Elevage</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#">Autres</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#">Maraîchage</a>
-                                </li>
-                            </ul>
+                        <ul class="list-group">
+                                <ng-container *ngFor="let item of categories">
+                                        <li class="list-group-item">
+                                                <a href="categorie/{{item.nomCategorie}}">{{ item.nomCategorie }}</a>
+                                        </li>
+                                </ng-container>
+                        </ul>
                     </aside>
 
                     
@@ -54,7 +46,13 @@
                                 </div>
                                 <div class="category_product_text">
                                     <a href="/categorie/cat.id"><h5>{{cat.nom}}  <small></small></h5></a>
-                                    <small>Posté par Falo : {{ cat.created_at | timeAgo}} </small>
+                                    <small>Posté par 
+                                        <ng-container *ngFor="let user of users;">
+                                            <ng-container *ngIf="cat.created_by == user.id">
+                                                Posté par: {{ user.username }}    
+                                            </ng-container>
+                                        </ng-container>
+                                        : {{ cat.created_at | timeAgo}} </small>
                                 </div>
                             </div>
                         </div>

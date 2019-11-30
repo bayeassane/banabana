@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse, HttpHeaders, HttpParams } from '@angular/comm
 import { Article } from '../../models/article/article';
 import { Observable, throwError } from 'rxjs';
 import { map, retry, catchError } from 'rxjs/operators';
+import { User } from 'src/app/models/user/user';
 
 
 
@@ -44,8 +45,6 @@ export class ArticleService {
   }
 
   deleteArticle(id: number) {
-    console.log(id);
-    console.log(this.baseUrl)
     return this._http.delete(this.baseUrl + 'articles/' + id);
   }
 
@@ -55,9 +54,8 @@ export class ArticleService {
   }
   public update(id, formData) {
     console.log(this.baseUrl + 'articles/' + id);
-    return this._http.put<any>(this.baseUrl + 'articles/' + id, formData);
+    return this._http.put<any>(this.baseUrl + 'articles/' + id, formData, this.httpOptions);
   }
-
 
 
   errorHandl(error) {

@@ -4,6 +4,7 @@ import { Categorie } from 'src/app/models/categorie/categorie';
 import { throwError, Observable } from 'rxjs';
 import { Louma } from 'src/app/models/louma/louma';
 import { Zone } from 'src/app/models/zone/zone';
+import { User } from 'src/app/models/user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,9 @@ export class CategorieService {
   };
   // tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient) { }
-
+  getUsers() {
+    return this._http.get<User[]>(this.baseUrl + 'users', this.httpOptions);
+  }
   getCategorie() {
     return this._http.get<Observable<Categorie[]>>(this.baseUrl + 'categorie', this.httpOptions);
   }

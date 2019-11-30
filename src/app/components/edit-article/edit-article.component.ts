@@ -75,7 +75,6 @@ export class EditArticleComponent implements OnInit {
     formData.append('prix', this.editForm.value.prix);
     formData.append('created_by', localStorage.getItem('user_connect'));
     formData.append('file', this.editForm.get('desc').value);
-    console.log(this.editForm.value.id);
     const id = this.activatedRoute.snapshot.params['id'];
     this.articleService.upload(id, formData).subscribe(
       (res) => {

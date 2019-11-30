@@ -11,25 +11,14 @@
                                 </div>
                                 <div class="widgets_inner">
                                     <ul class="list">
-                                        <li>
-                                            <a href="categorie/agriculture">Agriculture</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="categorie/elevage">Elevage</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maraîchage</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Autres</a>
-                                        </li>
+                                        <ng-container *ngFor="let item of categories" >
+                                                <li>
+                                                        <a href="categorie/{{item.nomCategorie}}">{{ item.nomCategorie }}</a>
+                                                </li>
+                                        </ng-container>
                                     </ul>
                                 </div>
-                            </aside>
-        
-                            
-        
+                            </aside>      
                             
                         </div>
                     </div>
@@ -49,8 +38,8 @@
                                         <img src="{{cat.imageCategorie}}" alt="" style="max-height: 200px; min-height: 200px;">
                                         <div class="category_social_icon">
                                             <ul>
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-bag"></i></a></li>
+                                                <li><a href="categorie/{{cat.nomCategorie}}"  style="background-color: #327d0e;"><i class="ti-eye"></i></a></li>
+                                                <!-- <li><a href="#"><i class="ti-bag"></i></a></li> -->
                                             </ul>
                                         </div>
                                         <div class="category_product_text">
