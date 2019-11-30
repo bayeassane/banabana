@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="category_product_text">
                                     <a href="/categorie/cat.id"><h5>{{cat.nom}}  <small></small></h5></a>
-                                    <small>Posté par 
+                                    <small>
                                         <ng-container *ngFor="let user of users;">
                                             <ng-container *ngIf="cat.created_by == user.id">
                                                 Posté par: {{ user.username }}    
