@@ -13,26 +13,26 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li routerLinkActive="active" class="nav-item">
-                                    <a class="nav-link" routerLink="/">Accueil</a>
+                                    <a class="nav-link" href="/">Accueil</a>
                                 </li>
                                 <li routerLinkActive="active" class="nav-item">
-                                    <a class="nav-link" routerLink="/categories">Catégories</a>
+                                    <a class="nav-link" href="/categories">Catégories</a>
                                 </li>
                                
                                 <li routerLinkActive="active" class="nav-item">
-                                    <a class="nav-link" routerLink="/loumas">Loumas</a>
+                                    <a class="nav-link" href="/loumas">Loumas</a>
                                 </li>
                                 <li routerLinkActive="active" class="nav-item">
-                                    <a class="nav-link" routerLink="">Contact</a>
+                                    <a class="nav-link" href="">Contact</a>
                                 </li>
                                 <li routerLinkActive="active" class="nav-item" *ngIf="getToken()">
-                                    <a class="nav-link" routerLink="/liste-de-mes-articles">Mes Articles</a> 
+                                    <a class="nav-link" href="/liste-de-mes-articles">Mes Articles</a> 
                                 </li>
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
                             <div>
-                                <a *ngIf="!getToken()" routerLink="/login" class="btn btn-default btn-rounded ti-user" >&nbsp;Login</a>
+                                <a *ngIf="!getToken()" href="/login" class="btn btn-default btn-rounded ti-user" >&nbsp;Login</a>
                                 <button *ngIf="getToken()" class="btn btn-default btn-rounded" (click)="logout()">Logout</button>
                                 <a id="search_1" href="javascript:void(0)"><i class="ti-search"  (click)="toggle()"></i></a>
                             </div>
