@@ -14,9 +14,9 @@ import { User } from 'src/app/models/user/user';
   styleUrls: ['./plus-recent.component.sass']
 })
 export class PlusRecentComponent implements OnInit {
-
+  categories: Observable<Categorie[]>;
   plArticles: Article [];
-  categories: Categorie[] ;
+  users: User[];
   names: any[]  = [
   
   ];
@@ -28,10 +28,20 @@ export class PlusRecentComponent implements OnInit {
 
   ngOnInit() {
     this.getItems();
-    console.log(this.plArticles);
-    
-    
-   
+    this.getOwner();
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categorieService.getCategorie().subscribe((data => {
+      this.categories = data;
+    }));
+  }
+
+  getOwner() {
+    this.categorieService.getUsers().subscribe((data) => {
+      this.users = data;
+    });
   }
 
 
