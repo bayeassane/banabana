@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
 
 import { tap } from 'rxjs/operators';
@@ -10,6 +10,11 @@ import { User } from 'src/app/models/user/user';
   providedIn: 'root'
 })
 export class LoginService {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private httpClient: HttpClient, private jwtHelper: JwtHelperService) { }
 
@@ -33,7 +38,7 @@ public  loggedIn(): boolean {
 }
 
 getUser(id: number) {
-  return this.httpClient.get<User>('http://banabanaapi.herokuapp.com/testApp/users/'+id);
+  return this.httpClient.get<User>('https://banabanaapi.herokuapp.com/testApp/users/' + id);
 }
 
 }

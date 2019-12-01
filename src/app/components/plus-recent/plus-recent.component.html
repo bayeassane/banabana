@@ -40,8 +40,8 @@
                             <div class="single_category_img">
                                 <img class="img-thumbnail" src="{{cat.image}}" alt="" style="max-height: 200px; min-height: 200px;">
                                 <div class="category_social_icon">
-                                    <ul style="color: #fa7705;">
-                                        <li><a  (click)="plusRecentArticle(cat['id'])" class="ti-eye" ></a></li>
+                                    <ul>
+                                        <li><a  (click)="plusRecentArticle(cat['id'])" class="ti-eye" style="background-color: #fa7705;"></a></li>
                                     </ul>
                                 </div>
                                 <div class="category_product_text">
@@ -52,7 +52,7 @@
                                                 Posté par: {{ user.username }}    
                                             </ng-container>
                                         </ng-container>
-                                        : {{ cat.created_at | timeAgo}} </small>
+                                        : {{ cat.created_at | date}} </small>
                                 </div>
                             </div>
                         </div>
