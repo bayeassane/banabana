@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/article/article';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/articles/article.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ArticlesComponent implements OnInit {
   resultats: Article[];
   isShow = false;
   nomCat = '';
-  constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private router: Router) { }
 
   articleCategorie(nom: string) {
     return this.articleService.getArticlesCategorie(nom).subscribe((data => {
@@ -28,5 +28,13 @@ export class ArticlesComponent implements OnInit {
     this.articleCategorie(nom);
     this.nomCat = nom;
   }
+
+  plusRecentArticle(id: number) {
+
+    console.log(id);
+    this.router.navigate(['/products', id]);
+
+  }
+
 
 }
