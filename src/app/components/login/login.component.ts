@@ -20,9 +20,8 @@ export class LoginComponent implements OnInit {
   onLoad = false;
   erorCon = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService, private toast: ToastrService) { }
-
-
+  constructor(private formBuilder: FormBuilder,
+              private router: Router, private loginService: LoginService, private toast: ToastrService) { }
   connexion() {
     this.boxForm  =  this.formBuilder.group({
       username: ['', Validators.required],

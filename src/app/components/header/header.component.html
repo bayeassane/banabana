@@ -28,12 +28,15 @@
                                 <li routerLinkActive="active" class="nav-item" *ngIf="getToken()">
                                     <a class="nav-link" href="/liste-de-mes-articles">Mes Articles</a> 
                                 </li>
+                                <li>
+                                    <a class="nav-link" (click)="logout()" *ngIf="getToken()">Logout</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
                             <div>
-                                <a *ngIf="!getToken()" href="/login" class="btn btn-default btn-rounded ti-user" >&nbsp;Login</a>
-                                <button *ngIf="getToken()" class="btn btn-default btn-rounded" (click)="logout()">Logout</button>
+                                <a *ngIf="!getToken()"   href="/login" class="btn btn-success btn-rounded ti-user" >&nbsp;Login</a>
+                                <button *ngIf="getToken()" class="ti-bell" style="background-color: #fa7705;" (click)="activeNotification()"></button>
                                 <a id="search_1" href="javascript:void(0)"><i class="ti-search"  (click)="toggle()"></i></a>
                             </div>
                             

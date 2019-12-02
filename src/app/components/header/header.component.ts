@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/article/article';
 import { ArticleService } from 'src/app/services/articles/article.service';
 import { ToastrService } from 'ngx-toastr';
+import push from 'push.js';
 
 @Component({
   selector: 'app-header',
@@ -58,6 +59,18 @@ redirection() {
 
   ngOnInit() {
     this.initRec();
+  }
+
+  activeNotification() {
+    push.Permission.request(
+      () => {
+        console.log(push.Permission.GRANTED);
+        console.log('accordé');
+      }, () => {
+        console.log(push.Permission.DENIED);
+        console.log('denieeed');
+      }
+    );
   }
 
 
