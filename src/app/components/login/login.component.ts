@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.boxForm.value.username, this.boxForm.value.passeword)
         .subscribe(
             data => {
+              console.log(data, 'data');
               localStorage.setItem('access_token', data.token);
               localStorage.setItem('user_connect', '' + data.user.id);
               this.toast.success('Vous êtes connecté !');
@@ -56,7 +57,6 @@ export class LoginComponent implements OnInit {
               this.isSubmitted = false;
               this.erorCon = true;
               this.onLoad = false;
-              console.log(error.error);
             });
 
   }
